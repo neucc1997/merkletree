@@ -7,7 +7,7 @@ import (
 	"bytes"
 	"crypto/sha256"
 	"errors"
-	"fmt"
+	"encoding/fmt"
 	"hex"
 	"hash"
 	"math/big"
