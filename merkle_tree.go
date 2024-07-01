@@ -8,6 +8,7 @@ import (
 	"crypto/sha256"
 	"errors"
 	"fmt"
+	"hex"
 	"hash"
 	"math/big"
 )
@@ -337,7 +338,8 @@ func (m *MerkleTree) VerifyContent(content Content) (bool, error) {
 
 //String returns a string representation of the node.
 func (n *Node) String() string {
-	return fmt.Sprintf("%t %t %v %s", n.leaf, n.dup, n.Hash, n.C)
+	// return fmt.Sprintf("%t %t %v %s", n.leaf, n.dup, n.Hash, n.C)
+	return fmt.Sprintf("%t %t %v %s", n.leaf, n.dup, hex.EncodeToString(n.Hash), n.C)
 }
 
 //String returns a string representation of the tree. Only leaf nodes are included
